@@ -6,6 +6,7 @@ vector<int> G[MAX_V], rG[MAX_V];
 vector<int> vs;
 bool used[MAX_V];
 //cmp[v] = cmp[U]なら、頂点u, vは同じ強連結成分
+//cmpに入っている番号は連結しているグラフごとに、トポロジカルソートされていて、ループ部分は同じ番号になっている。
 int cmp[MAX_V];//cmp[v] := 頂点vが含まれる連結成分がどれなのかを示す番号
 //隣接リストを作る
 void add_edge(int from, int to){//0origin
