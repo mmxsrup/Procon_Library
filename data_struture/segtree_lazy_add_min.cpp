@@ -43,7 +43,7 @@ public:
     //update(a,b,x) := [a,b)を全てxを加える
     void update(int a, int b, int x){update(a, b, 0, 0, SIZE, x);}
     //query(a,b) := [a,b)に対する最小値を求める
-    void query(int a, int b){return query(a, b, 0, 0, SIZE);}
+    ll query(int a, int b){return query(a, b, 0, 0, SIZE);}
 };
 
 /*
