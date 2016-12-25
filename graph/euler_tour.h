@@ -19,3 +19,7 @@ public:
 		end[curr] = k;
 	}
 };
+
+/*
+http://codeforces.com/contest/383/problem/C
+*/
