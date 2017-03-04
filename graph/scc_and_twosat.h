@@ -19,8 +19,8 @@ public:
 		group_cnt = k;
 	}
 	int operator[](int i){//連結成分の番号を返す
-        return cmp[i];
-    }
+		return cmp[i];
+	}
 private:
 	void dfs(int curr){
 		used[curr] = true;
@@ -41,33 +41,47 @@ private:
 class twosatisfiability{
 public:
 	int V;
-    vector<int> res; // 1:= 0:=
-    vector<vector<int> > g, rg;
-    twosatisfiability(int n) : V(n), g(2 * n), rg(2 * n), res(n){}
+	vector<int> res; // 1:= 0:=
+	vector<vector<int> > g, rg;
+	twosatisfiability(int n) : V(n), g(2 * n), rg(2 * n), res(n){}
 
-    bool exec() {
-        strongly_connected_components scc(g, rg, V);
-        for (int i = 0; i < V; i++) {
-            if (scc[i] == scc[i + V]) return false;
-            res[i] = scc[i] > scc[i + V];
-        }
-        return true;
-    }
-    void add_edge(int a, int b){
-        g[a].push_back(b);
-        rg[b].push_back(a);
-    }
-    //0~V-1: x_i
-    //V~2V-1: notx_i
-    void add(int a, bool apos, int b, bool bpos){//a V b をグラフへ
-        add_edge(a + (apos ? V : 0), b + (bpos ? 0 : V)); // not a -> b
-        add_edge(b + (bpos ? V : 0), a + (apos ? 0 : V)); // not b -> a
-    }
-    bool operator[](int k){
-        return res[k];
-    }
+	bool exec() {
+		strongly_connected_components scc(g, rg, V);
+		for (int i = 0; i < V; i++) {
+			if (scc[i] == scc[i + V]) return false;
+			res[i] = scc[i] > scc[i + V];
+		}
+		return true;
+	}
+	void add_edge(int a, int b){
+		g[a].push_back(b);
+		rg[b].push_back(a);
+	}
+	//0~V-1: x_i
+	//V~2V-1: notx_i
+	void add(int a, bool apos, int b, bool bpos){//a V b をグラフへ
+		add_edge(a + (apos ? V : 0), b + (bpos ? 0 : V)); // not a -> b
+		add_edge(b + (bpos ? V : 0), a + (apos ? 0 : V)); // not b -> a
+	}
+	bool operator[](int k){
+		return res[k];
+	}
 };
+
+int main(void){
+
+	twosatisfiability sat(n); /* 頂点の数 */
+	/* そのままをtrue, 変更するのをfalseとして
+		条件を満たさないようなものの条件を反転させた辺を追加する
+		ex) true trueで条件を満たさないなら
+		sat.add(i, false, j, false)
+	*/
+	return 0;
+}
 
 /*
 http://yukicoder.me/problems/no/470
+http://yukicoder.me/problems/no/274
+http://yukicoder.me/problems/no/483
+http://codeforces.com/contest/776/problem/D
 */
