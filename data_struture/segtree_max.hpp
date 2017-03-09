@@ -37,4 +37,8 @@ note: (1)~(4)を変えることで対応可能
 http://codeforces.com/contest/777/problem/E
 (http://codeforces.com/contest/777/submission/25346678)
 この問題では差はない
+
+http://codeforces.com/contest/689/problem/D
+(http://codeforces.com/contest/689/submission/25354957)
+この問題ではsegtree_max_slow.hppと比べて大きな差が出ている
 */

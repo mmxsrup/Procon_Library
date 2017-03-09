@@ -36,4 +36,7 @@ segtree すこし高速化
 note: (1)~(4)を変えることで対応可能
 http://arc045.contest.atcoder.jp/tasks/arc045_b
 (http://arc045.contest.atcoder.jp/submissions/1151765)
+
+http://codeforces.com/contest/689/problem/D
+(http://codeforces.com/contest/689/submission/25354957)
 */
