@@ -1,7 +1,7 @@
 const int MAX_N = 200010;
 vector<pair<int, int> > G[MAX_N];
 vector<int> dijkstra(int start){
-	vector<int> dist(MAX_N, INF);
+    vector<int> dist(MAX_N, INF);
     dist[start] = 0;//dist[i] :=　start->iまでの最短距離
     priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > >  que;
     que.push(make_pair(0, start));

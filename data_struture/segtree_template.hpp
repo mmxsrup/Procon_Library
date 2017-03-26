@@ -18,6 +18,7 @@ public:
 		}
 	}
 	T query(int l, int r){ //[l, r)の区間
+		/* 可換出ない時危険 */
 		T ret = neutral;
 		for (l += n, r += n; l < r; l >>= 1, r >>= 1){
 			if(l & 1) ret = func(ret, dat[l++]);
