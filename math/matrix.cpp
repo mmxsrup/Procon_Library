@@ -38,4 +38,10 @@ int main(void){
 A^n 行列を解く
 http://yukicoder.me/problems/no/492
 (http://yukicoder.me/submissions/157402)
+
+http://abc009.contest.atcoder.jp/tasks/abc009_4
+
+ N*N行列Aを作りたい場合
+ mat A(N, vec(N));
+ 
 */
